@@ -1,26 +1,172 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #121212;
+  --foreground: #e8e1d5;
+  --muted: #9c958b;
+  --panel: #181716;
+  --panel-strong: #211f1c;
+  --surface: #2a2723;
+  --card: rgba(232, 225, 213, 0.03);
+  --border: rgba(232, 225, 213, 0.1);
+  --primary: #c46a45;
+  --primary-strong: #d9825d;
+  --primary-soft: rgba(196, 106, 69, 0.14);
+  --secondary: #e8e1d5;
+  --secondary-foreground: #171614;
+  --shadow: rgba(0, 0, 0, 0.34);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: dark;
+  background: var(--background);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
+  margin: 0;
+  min-height: 100vh;
+  background: #121212;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a,
+button {
+  transition: all 180ms ease;
+}
+
+a,
+button:not(:disabled),
+select,
+summary,
+[role="button"] {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a:hover,
+button:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+::selection {
+  background: rgba(196, 106, 69, 0.35);
+  color: #e8e1d5;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(217, 130, 93, 0.95);
+  outline-offset: 3px;
+}
+
+/* Keep older route markup on the same warm, editorial system. */
+.bg-white {
+  background-color: #211f1c !important;
+}
+
+.bg-\[\#f7f5f3\] {
+  background-color: #121212 !important;
+}
+
+.bg-\[\#f8f7f6\] {
+  background-color: #181716 !important;
+}
+
+.bg-\[\#e8e4df\] {
+  background-color: #181716 !important;
+}
+
+.text-white {
+  color: #e8e1d5 !important;
+}
+
+.text-white\/70 {
+  color: #9c958b !important;
+}
+
+.text-white\/60 {
+  color: #706b64 !important;
+}
+
+.text-zinc-900,
+.text-zinc-950 {
+  color: #e8e1d5 !important;
+}
+
+.text-zinc-700,
+.text-zinc-600 {
+  color: #d8d1c5 !important;
+}
+
+.text-zinc-500,
+.text-zinc-400 {
+  color: #9c958b !important;
+}
+
+.border-black\/5,
+.border-black\/10 {
+  border-color: rgba(232, 225, 213, 0.1) !important;
+}
+
+.border-white\/10 {
+  border-color: rgba(232, 225, 213, 0.1) !important;
+}
+
+.bg-\[\#d8452a\] {
+  background-color: #c46a45 !important;
+}
+
+.hover\:bg-\[\#ef5a3a\]:hover {
+  background-color: #d9825d !important;
+}
+
+.text-\[\#d8452a\] {
+  color: #c46a45 !important;
+}
+
+.text-\[\#ef5a3a\] {
+  color: #d9825d !important;
+}
+
+.hover\:text-\[\#ff7d61\]:hover {
+  color: #e8e1d5 !important;
+}
+
+.border-\[\#d8452a\] {
+  border-color: #c46a45 !important;
+}
+
+.hover\:border-\[\#d8452a\]\/70:hover {
+  border-color: rgba(196, 106, 69, 0.7) !important;
+}
+
+.bg-\[\#d8452a\]\/10 {
+  background-color: rgba(196, 106, 69, 0.1) !important;
+}
+
+.fill-\[\#d8452a\] {
+  fill: #c46a45 !important;
 }
